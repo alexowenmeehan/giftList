@@ -8,33 +8,29 @@
 
 import UIKit
 
-var personMgr: personManager = personManager()
+    var personMgr: personManager = personManager()
 
-class person{
+    class Person{
     
-    var name:String
-    var description:String
-    var presentIdeasDict:[Int: String]
-    var presentLinkDict:[Int: String]
+        var name:String
+        var description:String
+        var presentIdeasDict:[Int: String]
+        var presentLinkDict:[Int: String]
     
-    init(name: String, description: String, presentIdeasDict: [Int: String], presentLinkDict: [Int: String]){
-        self.name = "Default"
-        self.description = "Default"
-        self.presentIdeasDict = [
-            0: "nil"
-        ]
-        self.presentLinkDict = [       //Use same key for name of present idea and link for the present
-            0: "nil"
-        ]
+        init(name: String, description: String, presentIdeasDict: [Int: String], presentLinkDict: [Int: String]){
+            self.name = name
+            self.description = description
+            self.presentIdeasDict = presentIdeasDict
+            self.presentLinkDict = presentLinkDict
+        }
     }
-}
 
-class personManager: NSObject {
+    class personManager{
     
-    var people = [person]()
+        var people = [Person]()
     
-    func addPerson(name: String, description: String){
-        people.append(person(name: name, description: description, presentIdeasDict: [0: "nil"], presentLinkDict: [0: "nil"]))
+        func addPerson(name: String, description: String){
+            people.append(Person(name: name, description: description, presentIdeasDict: [0: "nil"], presentLinkDict: [0: "nil"]))
+        }
+    
     }
-    
-}

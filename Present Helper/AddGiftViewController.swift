@@ -20,8 +20,8 @@ class AddGiftViewController: UIViewController {
     //Variables in global scope to inherit from First View Controller
     var nameString: String = ""
     var descString: String = ""
-    var giftIdeasDict:[Int: String]!
-    var giftLinksDict:[Int: String]!
+    var giftIdeasDict:[Int: String] = [0: "nil"]
+    var giftLinksDict:[Int: String] = [0: "nil"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class AddGiftViewController: UIViewController {
         //Check if there is actually any entries in the dictionary for gift ideas, no not load if only nil value is present
         if giftIdeasDict.count >= 2 {
             for index in 1...giftIdeasDict.count{
-                listOfGifts += "\((index)). \(giftIdeasDict![index]) \(giftLinksDict![index])\n"
+                listOfGifts += "\((index)). \(giftIdeasDict[index]) \(giftLinksDict[index])\n"
             }
         }
         
