@@ -43,8 +43,8 @@ class AddGiftViewController: UIViewController {
         
         //Check if there is actually any entries in the dictionary for gift ideas, no not load if only nil value is present
         if giftIdeasDict.count >= 2 {
-            for index in 1...giftIdeasDict.count{
-                listOfGifts += "\((index)). \(giftIdeasDict[index]) \(giftLinksDict[index])\n"
+            for index in 1...(giftIdeasDict.count - 1){
+                listOfGifts += "\((index)). \(giftIdeasDict[index]!) (Link: \(giftLinksDict[index]!))\n"
             }
         }
         
@@ -62,6 +62,9 @@ class AddGiftViewController: UIViewController {
             if txtGiftLink.text != "" {
                     giftLinksDict[index] = txtGiftLink.text
             }
+            
+            txtGiftIdea.text = ""
+            txtGiftLink.text = ""
             
             //Repopilate the text view
             populateList()

@@ -122,18 +122,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gift Idea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axc-NB-LoB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gift Idea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axc-NB-LoB">
                                 <rect key="frame" x="20" y="437" width="419" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="419" id="IFg-gY-ABH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hyperlink (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGD-o5-K0a">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hyperlink (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGD-o5-K0a">
                                 <rect key="frame" x="20" y="475" width="419" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct1-b9-xcp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct1-b9-xcp">
                                 <rect key="frame" x="20" y="513" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5Tq-4G-m3r"/>
+                                </constraints>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addGiftIdeas" destination="Vjt-5i-4d8" eventType="touchUpInside" id="eJk-p9-O5c"/>
@@ -150,13 +156,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZGD-o5-K0a" firstAttribute="top" secondItem="Axc-NB-LoB" secondAttribute="bottom" constant="8" symbolic="YES" id="1Wp-y0-0Rm"/>
+                            <constraint firstItem="ZGD-o5-K0a" firstAttribute="trailing" secondItem="Axc-NB-LoB" secondAttribute="trailing" id="Bmm-f2-qfK"/>
+                            <constraint firstItem="ZGD-o5-K0a" firstAttribute="leading" secondItem="Axc-NB-LoB" secondAttribute="leading" id="GOS-UO-5d2"/>
                             <constraint firstItem="paU-Ed-1nI" firstAttribute="leading" secondItem="mZp-j5-Plq" secondAttribute="leadingMargin" id="J29-G7-oGJ"/>
                             <constraint firstItem="PvS-cq-JUb" firstAttribute="top" secondItem="gex-jh-P5X" secondAttribute="bottom" constant="8" symbolic="YES" id="Kxj-RF-Vw8"/>
                             <constraint firstItem="ub3-c8-jYz" firstAttribute="trailing" secondItem="paU-Ed-1nI" secondAttribute="trailing" id="MVR-Nt-aaI"/>
                             <constraint firstItem="6fg-ow-Ygg" firstAttribute="top" secondItem="ub3-c8-jYz" secondAttribute="bottom" constant="229" id="S3X-2V-oCG"/>
+                            <constraint firstItem="ZGD-o5-K0a" firstAttribute="leading" secondItem="Ct1-b9-xcp" secondAttribute="leading" id="SEH-EH-gTC"/>
                             <constraint firstItem="ql3-hD-mJh" firstAttribute="centerX" secondItem="ub3-c8-jYz" secondAttribute="centerX" id="ScD-ww-qPd"/>
+                            <constraint firstItem="Axc-NB-LoB" firstAttribute="leading" secondItem="ub3-c8-jYz" secondAttribute="leading" id="XEM-he-V56"/>
+                            <constraint firstItem="Ct1-b9-xcp" firstAttribute="top" secondItem="ZGD-o5-K0a" secondAttribute="bottom" constant="8" symbolic="YES" id="Xcx-pZ-6is"/>
                             <constraint firstItem="PvS-cq-JUb" firstAttribute="centerX" secondItem="mZp-j5-Plq" secondAttribute="centerX" id="Zyn-5F-Qub"/>
                             <constraint firstItem="ub3-c8-jYz" firstAttribute="leading" secondItem="paU-Ed-1nI" secondAttribute="leading" id="aBb-eS-Fga"/>
+                            <constraint firstItem="6fg-ow-Ygg" firstAttribute="top" secondItem="Ct1-b9-xcp" secondAttribute="bottom" constant="8" symbolic="YES" id="eOE-3L-vRg"/>
                             <constraint firstItem="ub3-c8-jYz" firstAttribute="top" secondItem="paU-Ed-1nI" secondAttribute="bottom" constant="8" symbolic="YES" id="jka-Q6-6Px"/>
                             <constraint firstItem="paU-Ed-1nI" firstAttribute="centerX" secondItem="PvS-cq-JUb" secondAttribute="centerX" id="p7L-kh-y6a"/>
                             <constraint firstItem="ql3-hD-mJh" firstAttribute="top" secondItem="ub3-c8-jYz" secondAttribute="bottom" constant="25" id="tKT-9Z-b0s"/>
