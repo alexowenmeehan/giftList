@@ -98,6 +98,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             upcoming.descString = personMgr.people[indexPath.row].description
             upcoming.giftIdeasDict = personMgr.people[indexPath.row].presentIdeasDict
             upcoming.giftLinksDict = personMgr.people[indexPath.row].presentLinkDict
+            upcoming.personArrayIndex = indexPath.row
             
             self.tblPeople.deselectRowAtIndexPath(indexPath, animated: true)
         }

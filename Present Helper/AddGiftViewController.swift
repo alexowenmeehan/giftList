@@ -22,6 +22,7 @@ class AddGiftViewController: UIViewController {
     var descString: String = ""
     var giftIdeasDict:[Int: String] = [0: "nil"]
     var giftLinksDict:[Int: String] = [0: "nil"]
+    var personArrayIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class AddGiftViewController: UIViewController {
         //Load the name and description of the person the user has selected and load all of the presents and links associated
         txtName!.text = nameString
         txtDesc.text = descString
-        populateList()
+        txtPresents_and_Links.text = personMgr.populatePresentList(personArrayIndex)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,37 +38,17 @@ class AddGiftViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func populateList(){
-        
-        var listOfGifts:String = ""
-        
-        //Check if there is actually any entries in the dictionary for gift ideas, no not load if only nil value is present
-        if giftIdeasDict.count >= 2 {
-            for index in 1...(giftIdeasDict.count - 1){
-                listOfGifts += "\((index)). \(giftIdeasDict[index]!) (Link: \(giftLinksDict[index]!))\n"
-            }
-        }
-        
-        //Show all gift ideas and links in the UI text view
-        txtPresents_and_Links.text = listOfGifts
-    }
-    
     @IBAction func addGiftIdeas (){
         
         //Check to see if the field for gift ideas is null. Ignore if nil, add to dictionary if not
         if txtGiftIdea.text != "" {
-            let index = giftIdeasDict.count
-            giftIdeasDict[index] = txtGiftIdea.text
-            
-            if txtGiftLink.text != "" {
-                    giftLinksDict[index] = txtGiftLink.text
-            }
+            personMgr.addGift(txtGiftIdea.text!, giftLink: txtGiftLink.text!, index: personArrayIndex)
             
             txtGiftIdea.text = ""
             txtGiftLink.text = ""
             
             //Repopilate the text view
-            populateList()
+            txtPresents_and_Links.text = personMgr.populatePresentList(personArrayIndex)
             
         }
         
