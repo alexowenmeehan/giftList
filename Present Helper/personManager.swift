@@ -17,6 +17,7 @@ import UIKit
         var presentIdeasDict:[Int: String]
         var presentLinkDict:[Int: String]
     
+        //Initialise all members in Person class
         init(name: String, description: String, presentIdeasDict: [Int: String], presentLinkDict: [Int: String]){
             self.name = name
             self.description = description
@@ -29,12 +30,17 @@ import UIKit
     
         var people = [Person]()
     
+        //Method for adding a persom from the Second View Controller, when adding a name and description
         func addPerson(name: String, description: String){
+            
+            //Present Ideas and Links are set to nil, but first entry in each dict is ignored when displaying links and presents
             people.append(Person(name: name, description: description, presentIdeasDict: [0: "nil"], presentLinkDict: [0: "nil"]))
         }
         
+        //Method for adding a gift idea and possible gift link to the dictionary for a specific person
         func addGift(giftIdea: String, giftLink: String, index: Int){
         
+            //Checks to see the number of ideas so new gift ideas and links do not overwrite any old ideas or links accidentally
             let noOfIdeas = people[index].presentIdeasDict.count
             
             people[index].presentIdeasDict[noOfIdeas] = giftIdea
@@ -42,6 +48,7 @@ import UIKit
             
         }
         
+        //Method for displaying all of the gifts and links that a person has associated with them
         func populatePresentList(index:Int) -> String{
             var listOfGifts:String = ""
             

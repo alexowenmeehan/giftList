@@ -50,7 +50,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         self.tabBarController!.selectedIndex = 0
     }
     
-    //
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
