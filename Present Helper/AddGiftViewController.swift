@@ -16,6 +16,7 @@ class AddGiftViewController: UIViewController {
     @IBOutlet weak var txtGiftIdea: UITextField!
     @IBOutlet weak var txtGiftLink: UITextField!
     @IBOutlet weak var btnAddGift: UIButton!
+    @IBOutlet weak var btnDeleteGift: UIButton!
     
     //Variables in global scope to inherit from First View Controller
     var nameString: String = ""
@@ -51,6 +52,23 @@ class AddGiftViewController: UIViewController {
             txtPresents_and_Links.text = personMgr.populatePresentList(personArrayIndex)
             
         }
+        
+    }
+    
+    @IBAction func deleteGift(){
+        
+        let alertController = UIAlertController(title:nil, message: "Select the Present you Want to Remove", preferredStyle: .ActionSheet)
+        
+        let defaultAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        for noOfGifts in 0...giftIdeasDict.count{
+            
+            //Add a button for each gift name into the Action Sheet
+            
+        }
+        
+        presentViewController(alertController, animated: true, completion: nil)
         
     }
 
