@@ -57,14 +57,19 @@ class AddGiftViewController: UIViewController {
     
     @IBAction func deleteGift(){
         
+        
+        
         let alertController = UIAlertController(title:nil, message: "Select the Present you Want to Remove", preferredStyle: .ActionSheet)
         
-        let defaultAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
-        alertController.addAction(defaultAction)
+        if (personMgr.people[personArrayIndex].presentIdeasDict.count >= 1){
         
-        for noOfGifts in 0...giftIdeasDict.count{
+            for noOfGifts in 1...(personMgr.people[personArrayIndex].presentIdeasDict.count - 1){
+                alertController.addAction(UIAlertAction(title: "\(personMgr.people[personArrayIndex].presentIdeasDict[noOfGifts]!)", style: .Default, handler: nil))
             
-            //Add a button for each gift name into the Action Sheet
+            }
+            
+            let defaultAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
             
         }
         

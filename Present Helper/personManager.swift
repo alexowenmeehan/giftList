@@ -65,13 +65,14 @@ import UIKit
         
         func deletePresentFromList(sender: UIAlertAction){
             
+            print( String(UIAlertAction))
+            
             //Find relevant item in dictionary and remove from present dictionary and link dictionary
             
-        }
-        
-        func reorganiseDictionary(){
-            
             //Re-arrange dictionary after item has been deleted so that there are no missing numbers in the indexes
+            
+            
         
         }
+        
     }
