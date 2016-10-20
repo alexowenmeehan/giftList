@@ -55,24 +55,28 @@ class AddGiftViewController: UIViewController {
         
     }
     
+    // Function for deleting present from a list. Brings up an action sheet displaying all presents so far
+    
     @IBAction func deleteGift(){
         
-        
+        // Creates the alert controller
         
         let alertController = UIAlertController(title:nil, message: "Select the Present you Want to Remove", preferredStyle: .ActionSheet)
+
+        // Loop to add all the presents as actions in the Action Sheet and delete any presents specified, sent to method in personMgr
         
         if (personMgr.people[personArrayIndex].presentIdeasDict.count >= 1){
-        
             for noOfGifts in 1...(personMgr.people[personArrayIndex].presentIdeasDict.count - 1){
-                alertController.addAction(UIAlertAction(title: "\(personMgr.people[personArrayIndex].presentIdeasDict[noOfGifts]!)", style: .Default, handler: nil))
-            
+                alertController.addAction(UIAlertAction(title: "\(personMgr.people[personArrayIndex].presentIdeasDict[noOfGifts]!)", style: .Default, handler: {(alert: UIAlertAction!) in personMgr.deletePresentFromList()}))
             }
             
+            // Create a cancel action and add it to the list
             let defaultAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
             alertController.addAction(defaultAction)
             
         }
         
+        // Show the Action Sheet to the user
         presentViewController(alertController, animated: true, completion: nil)
         
     }

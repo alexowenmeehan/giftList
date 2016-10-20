@@ -63,15 +63,11 @@ import UIKit
             return listOfGifts
         }
         
-        func deletePresentFromList(sender: UIAlertAction){
-            
-            print( String(UIAlertAction))
+        func deletePresentFromList(){
             
             //Find relevant item in dictionary and remove from present dictionary and link dictionary
             
             //Re-arrange dictionary after item has been deleted so that there are no missing numbers in the indexes
-            
-            
         
         }
         
