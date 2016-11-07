@@ -96,8 +96,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             //Send any relevant information to the next view controller, including name, description and present ideas
             upcoming.nameString = personMgr.people[indexPath.row].name
             upcoming.descString = personMgr.people[indexPath.row].description
-            upcoming.giftIdeasDict = personMgr.people[indexPath.row].presentIdeasDict
-            upcoming.giftLinksDict = personMgr.people[indexPath.row].presentLinkDict
+            upcoming.giftIdeas = personMgr.people[indexPath.row].presentIdeas
+            upcoming.giftLinks = personMgr.people[indexPath.row].presentLinks
             upcoming.personArrayIndex = indexPath.row
             
             self.tblPeople.deselectRowAtIndexPath(indexPath, animated: true)

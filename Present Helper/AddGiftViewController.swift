@@ -21,8 +21,8 @@ class AddGiftViewController: UIViewController {
     //Variables in global scope to inherit from First View Controller
     var nameString: String = ""
     var descString: String = ""
-    var giftIdeasDict:[Int: String] = [0: "nil"]
-    var giftLinksDict:[Int: String] = [0: "nil"]
+    var giftIdeas:[String] = []
+    var giftLinks:[String] = []
     var personArrayIndex = 0
     
     override func viewDidLoad() {
@@ -65,9 +65,9 @@ class AddGiftViewController: UIViewController {
 
         // Loop to add all the presents as actions in the Action Sheet and delete any presents specified, sent to method in personMgr
         
-        if (personMgr.people[personArrayIndex].presentIdeasDict.count >= 1){
-            for noOfGifts in 1...(personMgr.people[personArrayIndex].presentIdeasDict.count - 1){
-                alertController.addAction(UIAlertAction(title: "\(personMgr.people[personArrayIndex].presentIdeasDict[noOfGifts]!)", style: .Default, handler: {(alert: UIAlertAction!) in personMgr.deletePresentFromList()}))
+        if (personMgr.people[personArrayIndex].presentIdeas.count >= 1){
+            for noOfGifts in 1...(personMgr.people[personArrayIndex].presentIdeas.count - 1){
+                alertController.addAction(UIAlertAction(title: "\(personMgr.people[personArrayIndex].presentIdeas[noOfGifts])", style: .Default, handler: {(alert: UIAlertAction!) in personMgr.deletePresentFromList(noOfGifts, personIndex: self.personArrayIndex)}))
             }
             
             // Create a cancel action and add it to the list
